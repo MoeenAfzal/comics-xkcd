@@ -127,7 +127,7 @@ const App = () => {
   }, []);
 
   if (looading) {
-    return <div>Loading...</div>;
+    return <div className='circle '>Loading...</div>;
   }
 
   const currentComic = coomics[currentCoomicIndex];
@@ -193,11 +193,11 @@ const App = () => {
             element={
               <>
                
-                <div className="upper-portions">
+                <div className="upper-portions slideExpandUp">
 
                   <div className="other-details"><p><span>Release Date:</span> {currentComic.month}/{currentComic.day}/{currentComic.year}</p>
                     <p><span>About:</span> {currentComic.alt}</p></div>
-                  <div className="search-bar">
+                  <div className="search-bar ">
                     <input
                       type="text"
                       placeholder="Search comics by Title"
@@ -223,7 +223,7 @@ const App = () => {
                 </div>
 
 
-                <div className="comic-details">
+                <div className="comic-details slideLeft  ">
                   <h3>{currentComic.title}</h3>
                   <div className="comic-buttons">
                     {isInCollection(currentComic) ? ( // Check if the comic is in the collection
@@ -248,7 +248,7 @@ const App = () => {
                       <button onClick={() => addToFavorites(currentComic)}>Add to Favorites</button>
                     )}
                   </div>
-                  <img src={currentComic.img} alt={currentComic.alt} />
+                  <img  src={currentComic.img} alt={currentComic.alt} />
                 </div>
               </>
             }
